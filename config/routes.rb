@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :p_cats
+  resources :p_sub_cats
+  resources :products
+  resources :vendors
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

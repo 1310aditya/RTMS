@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @product.desc %>
+</p>
+
+<p>
+  <strong>Man date:</strong>
+  <%= @product.man_date %>
+</p>
+
+<p>
+  <strong>Exp date:</strong>
+  <%= @product.exp_date %>
+</p>
+
+<p>
+  <strong>Inst date:</strong>
+  <%= @product.inst_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @product.status %>
+</p>
+
+<p>
+  <strong>I zone:</strong>
+  <%= @product.i_zone %>
+</p>
+
+<p>
+  <strong>I location:</strong>
+  <%= @product.i_location %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

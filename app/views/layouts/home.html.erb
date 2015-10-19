@@ -47,13 +47,34 @@
     </nav>
     <header>
         <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Rail Tool Managment System</h1>
-                <hr>
-                <p>Torque Wrenches &nbsp;&bull;&nbsp; Hydraulic &nbsp;&bull;&nbsp; Drilling Stroke &nbsp;&bull;&nbsp; Spindle Speed </p>
-
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
+            <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Manufacturing Date</th>
+        <th>Installation Date</th>
+        <th>Expiry Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        <%counter=1%>
+        <% @myproducts.each do |u| %>
+        <tr>
+        <td class="active"><%=counter%></td>
+        <td><%=u.title%></td>
+        <td><%=u.desc%></td>
+        <td><%=u.man_date%></td>
+        <td><%=u.inst_date%></td>
+        <td><%=u.exp_date%></td>
+        <td><%=u.status%></td>
+        <%counter+=1%>
+        </tr>
+        <%end%>
+      </tbody>
+  </table>  
         </div>
     </header>
     <section class="bg-primary" id="about">
@@ -62,8 +83,10 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">We are maintaining the records!</h2>
                     <hr class="light">
-                    <p class="text-faded">We just make management easy and best way to deal with on computer based. It is easy and portabe to handle the complet record here.</p>
-                    <a href="#" class="btn btn-default btn-xl">Go to Home!</a>
+                    <p class="text-faded">We just make management easy and provide best solutions. It is easy and portabe to handle complete records here.</p>
+                    <button class="btn btn-default btn-xl"><%= link_to 'Add Product',new_product_path%></button>
+                    <a href="#" class="btn btn-default btn-xl">Add Product Category</a>
+                    <a href="#" class="btn btn-default btn-xl">Add Product Sub Category</a>
                 </div>
             </div>
         </div>
