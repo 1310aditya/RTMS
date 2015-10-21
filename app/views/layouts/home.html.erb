@@ -47,7 +47,8 @@
     </nav>
     <header>
         <div class="header-content">
-            <table class="table table-hover">
+            <table class="table">
+            <%= yield :display1%>
     <thead>
       <tr>
         <th>S.No</th>
@@ -64,12 +65,12 @@
         <% @myproducts.each do |u| %>
         <tr>
         <td class="active"><%=counter%></td>
-        <td><%=u.title%></td>
-        <td><%=u.desc%></td>
-        <td><%=u.man_date%></td>
-        <td><%=u.inst_date%></td>
-        <td><%=u.exp_date%></td>
-        <td><%=u.status%></td>
+        <td class="active"><%=u.title%></td>
+        <td class="active"><%=u.desc%></td>
+        <td class="active"><%=u.man_date%></td>
+        <td class="active"><%=u.inst_date%></td>
+        <td class="active"><%=u.exp_date%></td>
+        <td class="active"><%=u.status%></td>
         <%counter+=1%>
         </tr>
         <%end%>
