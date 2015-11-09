@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'activeadmin', '~> 1.0.0.pre2'
-
+gem 'pry'
 # Plus integrations with:
 gem 'devise'
 gem 'cancan' # or cancancan

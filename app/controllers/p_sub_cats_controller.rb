@@ -14,6 +14,7 @@ class PSubCatsController < ApplicationController
 
   # GET /p_sub_cats/new
   def new
+    @myproducts = Product.all
     @p_sub_cat = PSubCat.new
   end
 

@@ -1,6 +1,6 @@
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+  <%= stylesheet_link_tag    '/css/bootstrap.min.css'%>
+  <%= stylesheet_link_tag    '/css/creative.css'%>
+  <%= stylesheet_link_tag    '/css/font-awesome.min.css'%>
 
 <body id="page-top">
 
@@ -47,35 +47,37 @@
     </nav>
     <header>
         <div class="header-content">
+            <%= yield :display_p%>
+            <%= yield :display_pcat%>
+            <%= yield :display_psubcat%>
             <table class="table">
-            <%= yield :display1%>
-    <thead>
-      <tr>
-        <th>S.No</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Manufacturing Date</th>
-        <th>Installation Date</th>
-        <th>Expiry Date</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-        <%counter=1%>
-        <% @myproducts.each do |u| %>
-        <tr>
-        <td class="active"><%=counter%></td>
-        <td class="active"><%=u.title%></td>
-        <td class="active"><%=u.desc%></td>
-        <td class="active"><%=u.man_date%></td>
-        <td class="active"><%=u.inst_date%></td>
-        <td class="active"><%=u.exp_date%></td>
-        <td class="active"><%=u.status%></td>
-        <%counter+=1%>
-        </tr>
-        <%end%>
-      </tbody>
-  </table>  
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Manufacturing Date</th>
+                    <th>Installation Date</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+            <tbody>
+                <%counter=1%>
+                <% @myproducts.each do |u| %>
+                <tr>
+                <td class="active"><%=counter%></td>
+                <td class="active"><%=u.title%></td>
+                <td class="active"><%=u.desc%></td>
+                <td class="active"><%=u.man_date%></td>
+                <td class="active"><%=u.inst_date%></td>
+                <td class="active"><%=u.exp_date%></td>
+                <td class="active"><%=u.status%></td>
+                <%counter+=1%>
+                </tr>
+                <%end%>
+            </tbody>
+            </table>  
         </div>
     </header>
     <section class="bg-primary" id="about">
@@ -86,8 +88,9 @@
                     <hr class="light">
                     <p class="text-faded">We just make management easy and provide best solutions. It is easy and portabe to handle complete records here.</p>
                     <button class="btn btn-default btn-xl"><%= link_to 'Add Product',new_product_path%></button>
-                    <a href="#" class="btn btn-default btn-xl">Add Product Category</a>
-                    <a href="#" class="btn btn-default btn-xl">Add Product Sub Category</a>
+                    <button class="btn btn-default btn-xl"><%= link_to 'Add Product Category',new_p_cat_path%></button>
+                    <button class="btn btn-default btn-xl"><%= link_to 'Add Product Sub Category',new_p_sub_cat_path%></button>
+                    
                 </div>
             </div>
         </div>

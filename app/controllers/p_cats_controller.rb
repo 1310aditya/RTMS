@@ -10,15 +10,19 @@ class PCatsController < ApplicationController
   # GET /p_cats/1
   # GET /p_cats/1.json
   def show
+    @p_cats = PCat.all
   end
 
   # GET /p_cats/new
   def new
+    @myproducts = Product.all
+    @p_cats = PCat.all
     @p_cat = PCat.new
   end
 
   # GET /p_cats/1/edit
   def edit
+    @p_cats = PCat.all
   end
 
   # POST /p_cats
